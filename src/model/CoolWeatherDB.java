@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import db.CoolWeatherOpenHelper;
 
+
 public class CoolWeatherDB {
 	/**
 	 * Database name
@@ -120,7 +121,8 @@ public class CoolWeatherDB {
 				County county =new County();
 				county.setId(cursor.getInt(cursor.getColumnIndex("id")));
 				county.setCountyName(cursor.getString(cursor.getColumnIndex("county_name")));
-				county.setCityId(cursor.getInt(cursor.getColumnIndex("cityId")));
+				county.setCountyCode(cursor.getString(cursor.getColumnIndex("county_code")));
+				county.setCityId(cityId);
 				list.add(county);
 			}while (cursor.moveToNext());
 		}
